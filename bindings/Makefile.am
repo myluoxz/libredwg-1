@@ -1,4 +1,4 @@
-## Makefile.am
+## bindings/Makefile.am
 ##
 ## Copyright (C) 2010, 2018 Free Software Foundation, Inc.
 ##
@@ -19,4 +19,4 @@
 
 ACLOCAL_AMFLAGS = -I m4
 
-SUBDIRS = python
+SUBDIRS = python perl/swig

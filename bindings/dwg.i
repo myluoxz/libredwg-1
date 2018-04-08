@@ -16,7 +16,7 @@
  * ideas contributed by James Michael DuPont
  */
 
-%module libredwg
+%module LibreDWG
 
 %{
 #include "../../include/dwg.h"
