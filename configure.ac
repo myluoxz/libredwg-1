@@ -288,7 +288,7 @@ AC_CONFIG_FILES([
 	programs/Makefile
 	examples/Makefile
 	bindings/Makefile
-	bindings/perl/swig/Makefile
+	bindings/perl/Makefile
 	bindings/python/Makefile
 	test/Makefile
 	test/testcases/Makefile

@@ -1721,7 +1721,7 @@ SWIGEXPORT void SWIG_init (CV *cv, CPerlObj *);
 #endif
 
 
-#include "../../include/dwg.h"
+#include "dwg.h"
 
 
   static Dwg_Object *new_Dwg_Object_Array(size_t nelements) { 

@@ -1,6 +1,5 @@
 use ExtUtils::MakeMaker;
 use strict;
-use Config;
 use ExtUtils::Embed qw(ccopts ldopts);
 my ($ccflags, $ldflags);
 
@@ -10,15 +9,15 @@ chomp($ldopts);
 for (@ARGV) {
   if    (/^CFLAGS=(.*)$/)  { $ccflags = ccopts . " $1"; }
   elsif (/^LDFLAGS=(.*)$/) { $ldflags = $ldopts . " $1"; }
-  else { warn "ignored arg $_. We only accept CCFLAGS and LDDLFLAGS"; }
+  else { warn "ignored arg $_. We only accept CFLAGS and LDFLAGS"; }
 }
 if (!@ARGV && 
-    -d '../perl' &&
-    -d '../../bindings' &&
-    -d '../../src/.libs' &&
-    -d '../../include') {
-  $ccflags = ccopts . " -I../../include";
-  $ldflags = $ldopts . " -L../../src/.libs -lredwg";
+    -d '../../perl' &&
+    -d '../../../bindings' &&
+    -d '../../../src/.libs' &&
+    -d '../../../include') {
+  $ccflags = ccopts . " -I../../../include";
+  $ldflags = $ldopts . " -L../../../src/.libs -lredwg";
 }
 
 WriteMakefile (
@@ -31,7 +30,7 @@ WriteMakefile (
       AUTHOR  	=> 'Reini Urban <rurban@cpan.org>')
    : ()),
   ((ExtUtils::MakeMaker->VERSION() gt '6.30') ?
-   (LICENSE  => 'GPL', SIGN => 1)  : ()),
+   (LICENSE  => 'GPL', SIGN => 1)  : ()), # GPLv3+
   ((ExtUtils::MakeMaker->VERSION() gt '6.46') ?
    (META_MERGE => {
      resources => {

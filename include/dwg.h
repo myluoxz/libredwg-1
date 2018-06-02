@@ -485,7 +485,7 @@ typedef struct _dwg_resbuf
     unsigned char hdl[8];
     struct _dwg_binary_chunk str;
   } value;
-  struct _dwg_resbuf *next;
+  struct _dwg_resbuf *next; /* FIXME: this is a perl keyword */
 } Dwg_Resbuf;
 
 /**

@@ -19,4 +19,4 @@
 
 ACLOCAL_AMFLAGS = -I m4
 
-SUBDIRS = python perl/swig
+SUBDIRS = python perl
