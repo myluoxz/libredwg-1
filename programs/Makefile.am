@@ -20,9 +20,9 @@
 AM_CFLAGS = -I$(top_srcdir)/include -I$(top_srcdir)/src $(WARN_CFLAGS)
 LDADD   = $(top_builddir)/src/libredwg.la -lm
 
-bin_PROGRAMS = dwgread dwgbmp dwg2dxf dwg2SVG dwglayers
+bin_PROGRAMS = dwgread dwgbmp dwg2dxf dwg2SVG dwglayers dwggrep
 noinst_PROGRAMS =
-dist_man1_MANS = dwgread.1 dwgbmp.1 dwg2dxf.1 dwg2SVG.1 dwglayers.1
+dist_man1_MANS = dwgread.1 dwgbmp.1 dwg2dxf.1 dwg2SVG.1 dwglayers.1 dwggrep.1
 DISTCLEANFILES = core
 
 if HAVE_LIBPS
@@ -36,6 +36,8 @@ dwgread_SOURCES  = dwgread.c
 dwgbmp_SOURCES   = dwgbmp.c
 dwg2dxf_SOURCES  = dwg2dxf.c
 dwglayers_SOURCES = dwglayers.c
+dwggrep_SOURCES = dwggrep.c
+dwggrep_LDADD   = $(LDADD) -lpcre2-8
 dwg2SVG_SOURCES  = dwg2SVG.c
 
 if USE_WRITE
